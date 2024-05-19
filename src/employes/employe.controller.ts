@@ -23,7 +23,7 @@ async  updateEmploye(req: Request, res: Response) {
   }
 
  async getEmployes(req: Request, res: Response) {
-    const { page, userId } = req.query;
+    const { page, userId } = req.params;
     try {
       const data = await appService.getEmployes(page, userId);
       return res.status(200).json(data);
@@ -56,5 +56,6 @@ async  updateEmploye(req: Request, res: Response) {
  async getAll(_req: Request, res: Response) {
   const data = await appService.getAll()
     return res.json(data)
-  }
+ }
+
 }

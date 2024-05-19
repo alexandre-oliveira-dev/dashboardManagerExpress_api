@@ -54,7 +54,7 @@ export class EmployesService {
   }
 
   async getAll() {
-    const res = await employes.find().exec()
+    const res = await employes.find()
     return res
   }
 }
