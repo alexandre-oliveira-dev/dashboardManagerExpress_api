@@ -14,7 +14,7 @@ mongoose.connect(
 app.use((req: Request, res: Response, next: NextFunction) => {
   express.json()(req, res, next);
 });
-app.use(cors());
+app.use(cors({origin:'*'}));
 app.use(route);
 
 
