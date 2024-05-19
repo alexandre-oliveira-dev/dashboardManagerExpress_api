@@ -57,5 +57,9 @@ async  updateEmploye(req: Request, res: Response) {
   const data = await appService.getAll()
     return res.json(data)
  }
+  
+  async deleteAll() {
+    await appService.deleteAll()
+  }
 
 }

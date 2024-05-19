@@ -48,6 +48,10 @@ export class EmployesService {
     const res = await employes.deleteOne({ _id: new ObjectId(id) });
     return res;
   }
+  async deleteAll() {
+    const res = await employes.deleteMany();
+    return res;
+  }
   async updateEmploye(id: string, body: CreateEmployeDto) {
     const res = await employes.updateOne({ _id: new ObjectId(id) }, body);
     return res;
