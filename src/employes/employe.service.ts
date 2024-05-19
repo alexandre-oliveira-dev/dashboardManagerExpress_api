@@ -17,12 +17,12 @@ export class EmployesService {
     return doc.save();
   }
 
-  async getEmployes(page: any, userId: any) {
+  async getEmployes(page: any) {
     const totalDocuments = await employes.countDocuments();
     const pageSize = 5;
     const totalPages = Math.ceil(totalDocuments / pageSize);
     const res = await employes
-      .find({ userId: userId })
+      .find()
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 

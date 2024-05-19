@@ -23,9 +23,9 @@ async  updateEmploye(req: Request, res: Response) {
   }
 
  async getEmployes(req: Request, res: Response) {
-    const { page, userId } = req.params;
+    const { page } = req.query;
     try {
-      const data = await appService.getEmployes(page, userId);
+      const data = await appService.getEmployes(page);
       return res.status(200).json(data);
     } catch (err) {
       throw err;
